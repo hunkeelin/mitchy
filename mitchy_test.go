@@ -6,5 +6,6 @@ import (
 )
 
 func TestMitchy(t *testing.T) {
-	fmt.Println("you suck")
+	hi()
+	panic(fmt.Errorf("you suck"))
 }
