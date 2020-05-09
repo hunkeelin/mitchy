@@ -11,7 +11,7 @@ jobs:
             - master
     docker:
       # specify the version
-      - image: amazonlinux
+      - image: amazon/aws-cli
     steps:
       - checkout
       - run: aws ec2 describe-instances
