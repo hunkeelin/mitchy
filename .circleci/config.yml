@@ -4,7 +4,7 @@
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
-  build:
+  noob:
     filters: 
       branches:
           only: 
@@ -26,3 +26,16 @@ jobs:
     steps:
       - checkout
       - run: ls
+
+workflows:
+  version: 2
+  plan:
+    jobs:
+      - noob:
+          filters:
+            branches:
+              ignore: master
+      - pro:
+          filters:
+            branches:
+              only: master
