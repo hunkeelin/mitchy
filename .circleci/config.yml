@@ -4,7 +4,7 @@
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2
 jobs:
-  build:
+  noob:
     filters: 
       branches:
           only: 
@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: aws ec2 describe-instances
-  test:
+  pro:
     filters: 
       branches:
           only: 
