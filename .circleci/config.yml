@@ -15,3 +15,14 @@ jobs:
     steps:
       - checkout
       - run: aws ec2 describe-instances
+  test:
+    filters: 
+      branches:
+          only: 
+            - master
+    docker:
+      # specify the version
+      - image: amazon/aws-cli
+    steps:
+      - checkout
+      - run: ls
