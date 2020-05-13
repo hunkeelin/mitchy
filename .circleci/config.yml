@@ -2,28 +2,27 @@
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
-workflows:
-  version: 2
-  jobs:
-    noob:
-      filters: 
-        branches:
-            only: 
-              - master
-      docker:
-        # specify the version
-        - image: amazon/aws-cli
-      steps:
-        - checkout
-        - run: aws ec2 describe-instances
-    pro:
-      filters: 
-        branches:
-            only: 
-              - master
-      docker:
-        # specify the version
-        - image: amazon/aws-cli
-      steps:
-        - checkout
-        - run: ls
+version: 2
+jobs:
+  build:
+    filters: 
+      branches:
+          only: 
+            - master
+    docker:
+      # specify the version
+      - image: amazon/aws-cli
+    steps:
+      - checkout
+      - run: aws ec2 describe-instances
+  pro:
+    filters: 
+      branches:
+          only: 
+            - master
+    docker:
+      # specify the version
+      - image: amazon/aws-cli
+    steps:
+      - checkout
+      - run: ls
